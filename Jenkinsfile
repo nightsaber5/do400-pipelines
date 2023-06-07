@@ -8,8 +8,8 @@ pipeline {
         booleanParam(name: "RUN_FRONTEND_TESTS", defaultValue: true)
     }
     stages {
-	    when { expression { params.RUN_FRONTEND_TESTS } }
         stage('Run Tests') {
+	    when { expression { params.RUN_FRONTEND_TESTS } }
             parallel {
                 stage('Backend Tests') {
                     steps {
